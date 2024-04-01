@@ -13,18 +13,16 @@ spec:
   - protocol: TCP
     port: 8030
     name: http
-
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: stockmanager
 spec:
-  spec:
+  replicas: 1
   selector:
     matchLabels:
       app: stockmanager
-  replicas: 1
   template:
     metadata:
       labels:
